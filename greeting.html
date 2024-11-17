@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daddy</title>
+    <link rel="stylesheet" href="greeting.css">
+    <link rel="icon" href="party-popper.png" type="image/png">
+
+</head>
+<body>
+    <audio autoplay loop>
+        <source src="bdayaudio.mp3" type="audio/mp3">
+    </audio>
+    <div class="images">
+        <div class="pic1">
+            <img src="Happy Birthday (4).png" alt="Image 1">
+        </div>
+        <div class="pic2">
+            <img src="Happy Birthday (2).png" alt="Image 2">
+        </div>
+    </div>
+    <div class="text">
+        <h1>Happy Birthday !!!</h1>
+        <div class="secondline">
+            <h2>Bitch</h2>
+            <div class="volume" id="playButton">
+                <input type="checkbox" class="volume-input" />
+                <div class="volume-icon">
+                  <svg
+                    viewBox="0 0 24 24"
+                    width="24"
+                    height="24"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    fill="none"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="volume-svg"
+                  >
+                    <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                    <path
+                      d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"
+                    ></path>
+                  </svg>
+                </div>
+              </div>
+        </div>
+        
+        <!-- Video element -->
+    <div id="videoContainer" style="display:none;">
+        <video id="birthdayVideo" width="640" height="360">
+            <source src="bdayvid.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.js"></script>
+    <div id="confetti"></div>
+    <script src="script.js"></script>
+    <script>
+        // Get the button, video container, and video element
+        const playButton = document.getElementById('playButton');
+        const videoContainer = document.getElementById('videoContainer');
+        const birthdayVideo = document.getElementById('birthdayVideo');
+
+        // Button click event to show the video and play it
+        playButton.addEventListener('click', function() {
+            // Show the video container
+            videoContainer.style.display = 'block';
+            // Play the video
+            birthdayVideo.play();
+        });
+
+        // Event listener to hide the video after it finishes playing
+        birthdayVideo.addEventListener('ended', function() {
+            // Hide the video container when video ends
+            videoContainer.style.display = 'none';
+        });
+    </script>
+
+    </div>
+
+    
+</body>
+</html>
