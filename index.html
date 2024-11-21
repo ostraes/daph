@@ -6,14 +6,19 @@
     <title>Daddy</title>
     <link rel="stylesheet" href="main.css">
     <link rel="icon" href="party-popper.png" type="image/png">
-    
+
       
 </head>
-<body>
-
+<style>
+    body {  background:#ffd7d7; }
+    canvas { position:absolute;  z-index:-1; margin: -50%; }
+    a { color:white; text-decoration:none; }
+    #copyright { color:white; font-family:arial; font-size:12px; position:absolute; right:0; bottom:0; z-index:1000; }
+</style>
+<body id="body">
+    
     <div class="page">
-        <div class="book">
-            <p>Hello</p>
+        <div class="book" id="book" style="display: none;">
             <div class="cover">
                 
             </div>
@@ -28,15 +33,61 @@
             <div class="drip drip2"></div>
             <div class="drip drip3"></div>
             <div class="candle">
-            <div class="flame"></div>
+            <div class="flame" id="flame"></div>
+        </div>
+
+       <div class="lowerpart">
+        <div class="show" id="showbtn">
+            <span class="fa-solid--wind"></span>
         </div>
         
-        <a href="greeting.html">
-            <button >Read Card</button>
+        <a href="greeting.html" style="display: none;" id="greeting" >
+            <button id="greetingbtn" class="btn" style="display: none;">Read Card</button>
         </a>
+       </div>
+
+       <audio src="cheer.mp3" id="clap" autoplay loop></audio>
 
     </div>
+    <canvas id="canvas" style="display: none;"></canvas>
+        
+
+    <script>
+
+        const showbtn = document.getElementById('showbtn');
+        const greeting = document.getElementById('greeting');
+        const greetingbtn = document.getElementById('greetingbtn');
+        const flame = document.getElementById('flame');
+        const clap = document.getElementById('clap');
+
+        showbtn.addEventListener('click', function() {
+            greeting.style.display = 'block';
+            greetingbtn.style.display = 'block';
+            flame.style.display = 'none';
+           showbtn.style.display = 'none';
+            clap.play();
+            canvas.style.display = 'block';
+            book.style.display = 'block';
+        });
+
+
+
+
+        function toggleElements() {
+            
+            document.getElementById('greetingLink').style.display = 'block';
+            document.getElementById('readCardButton').style.display = 'block';
+            
+            document.getElementById('showbtn').style.display = 'none';
+        }
+    
+        window.onload = function() {
+            toggleElements();
+        };
+    </script>
+    
    
     <script src="script.js"></script>
+    <script src="fireworks.js"></script>
 </body>
 </html>
