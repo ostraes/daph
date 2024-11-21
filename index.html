@@ -61,6 +61,7 @@
         const clap = document.getElementById('clap');
 
         showbtn.addEventListener('click', function() {
+            // Show the video container
             greeting.style.display = 'block';
             greetingbtn.style.display = 'block';
             flame.style.display = 'none';
@@ -73,14 +74,17 @@
 
 
 
+        // Function to show the <a> and <button>, and hide the <div id="showbtn">
         function toggleElements() {
-            
+            // Show the <a> link and the <button> inside it
             document.getElementById('greetingLink').style.display = 'block';
             document.getElementById('readCardButton').style.display = 'block';
             
+            // Hide the <div class="show" id="showbtn"> which has the flame icon
             document.getElementById('showbtn').style.display = 'none';
         }
     
+        // Call the function to execute it when needed, e.g., on page load or triggered event
         window.onload = function() {
             toggleElements();
         };
